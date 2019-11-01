@@ -55,7 +55,7 @@ router.get('/users/me', auth, async (req, res) => {
 })
 
 //  
-router.get('/users',auth, role, async (req, res) => {
+router.get('/users', async (req, res) => {
     try {
         const user = await User.find({})
         res.send(user)
