@@ -4,6 +4,7 @@ const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 
 const userSchema = new mongoose.Schema({
+    
     fullname: {
         type: String,
         required: true,
@@ -46,6 +47,12 @@ const userSchema = new mongoose.Schema({
                 throw new Error('Age must be 18 or more.')
             }
         }
+    }, department: {
+        type: String,
+        default: "none",
+        required: true,
+        trim: true,
+        lowercase: true,
     },
     role: {
         type: String,
